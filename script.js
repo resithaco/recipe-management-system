@@ -1,10 +1,9 @@
 class RecipeApp {
 
-  constructor(){
+  constructor() {
     this.recipes = [];
     this.loadRecipes();
   }
-
 
   loadRecipes = async () => {
 
@@ -17,16 +16,14 @@ class RecipeApp {
     this.renderRecipes();
   }
 
-
   addRecipe = () => {
-
     const recipeInput = document.getElementById("recipe");
     const ingredientInput = document.getElementById("ingredient");
 
     const recipeName = recipeInput.value;
     const ingredients = ingredientInput.value;
 
-    if(!recipeName || !ingredients){
+    if (!recipeName || !ingredients) {
       alert("Lütfen tarifin adını ve malzemelerini girin!");
       return;
     }
@@ -40,50 +37,41 @@ class RecipeApp {
 
     this.recipes.push(newRecipe);
 
+    localStorage.setItem("recipes", JSON.stringify(this.recipes));
+
     recipeInput.value = "";
     ingredientInput.value = "";
 
-    this.renderRecipes();
+    alert("Tarif eklendi!");
   }
 
-renderRecipes = () => {
+  renderRecipes = () => {
+    const resultDiv = document.getElementById("tariffs");
 
-  const resultDiv = document.getElementById("tariffs");
+    if (!resultDiv) return;
 
-  resultDiv.innerHTML = "";
+    resultDiv.innerHTML = "";
 
-  this.recipes.forEach(({id, recipe, ingredients, isFavorite}) => {
-
-    resultDiv.innerHTML += `
-    
-    <div class="card">
-
-      <h3>${recipe}</h3>
-
-      <p>${ingredients.join(", ")}</p>
-
-      <p>${isFavorite ? "⭐ Favori" : ""}</p>
-
-      <button onclick="app.toggleFavorite(${id})">
-      Favori
-      </button>
-
-    </div>
-
-    `;
-
-  });
-
-}
+    this.recipes.forEach(({ id, recipe, ingredients, isFavorite }) => {
+      resultDiv.innerHTML += `
+        <div class="card">
+          <h3>${recipe}</h3>
+          <p>${ingredients.join(", ")}</p>
+          <p>${isFavorite ? "⭐ Favori" : ""}</p>
+          <button onclick="app.toggleFavorite(${id})">Favori</button>
+        </div>
+      `;
+    });
+  }
 
   toggleFavorite = (id) => {
-
     const recipe = this.recipes.find(r => r.id === id);
 
-    if(recipe){
+    if (recipe) {
       recipe.isFavorite = !recipe.isFavorite;
     }
 
+    localStorage.setItem("recipes", JSON.stringify(this.recipes));
     this.renderRecipes();
   }
 
