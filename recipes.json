@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "recipe": "Pizza",
+    "ingredients": ["cheese", "tomato"],
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "recipe": "Soup",
+    "ingredients": ["water", "salt"],
+    "isFavorite": false
+  }
+]

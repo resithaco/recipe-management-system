@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe App</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+<div class="add-section">
+<h2>Tarife Ekle</h2>
+<input type="text" id="recipe" placeholder="Tarife Adı">
+<input type="text" id="ingredient" placeholder="Malzemeler (virgülle ayrılmış)">
+<button onclick="app.addRecipe()">Tarife Ekle</button>
+</div>
+<div class="display-section">
+<h2>Tarifeler</h2>
+<div id="tariffs" class="cards"></div>
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
