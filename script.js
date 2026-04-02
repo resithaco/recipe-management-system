@@ -16,14 +16,17 @@ class RecipeApp {
     this.renderRecipes();
   }
 
-  addRecipe = () => {
+  addRecipe = (event) => {
+    event.preventDefault();
     const recipeInput = document.getElementById("recipe");
     const ingredientInput = document.getElementById("ingredient");
+    const imageUrlInput = document.getElementById("imageUrl");
 
     const recipeName = recipeInput.value;
     const ingredients = ingredientInput.value;
+    const imageUrl = imageUrlInput.value;
 
-    if (!recipeName || !ingredients) {
+    if (!recipeName || !ingredients || !imageUrl) {
       alert("Lütfen tarifin adını ve malzemelerini girin!");
       return;
     }
@@ -32,15 +35,17 @@ class RecipeApp {
       id: Date.now(),
       recipe: recipeName,
       ingredients: ingredients.split(","),
+      image:imageUrl,
       isFavorite: false
     };
 
     this.recipes.push(newRecipe);
 
     localStorage.setItem("recipes", JSON.stringify(this.recipes));
-
+    this.renderRecipes();
     recipeInput.value = "";
     ingredientInput.value = "";
+    imageUrlInput.value="";
 
     alert("Tarif eklendi!");
   }
@@ -52,10 +57,11 @@ class RecipeApp {
 
     resultDiv.innerHTML = "";
 
-    this.recipes.forEach(({ id, recipe, ingredients, isFavorite }) => {
+    this.recipes.forEach(({ id, recipe, ingredients, isFavorite,image}) => {
       resultDiv.innerHTML += `
         <div class="card">
           <h3>${recipe}</h3>
+          <img src=${image} class="card-img">
           <p>${ingredients.join(", ")}</p>
           <p>${isFavorite ? "⭐ Favori" : ""}</p>
           <button onclick="app.toggleFavorite(${id})">Favori</button>

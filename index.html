@@ -9,23 +9,33 @@
 </head>
 
 <body>
-
+<div></div>
 <nav class="navbar">
-  <a href="index.html" class="active">➕ Tarife ekleme</a>
-  <a href="display.html">📋 Tarifeler</a>
+  <a href="#">iletişm</a>
+  <a href="index.html" class="active"> Tarife ekleme</a>
+  <a href="Registration.html"> Öye Ol</a>
 </nav>
 
 <div class="container">
   <div class="add-section">
     <h2>Tarife Ekle</h2>
 
-    <input type="text" id="recipe" placeholder="Tarife Adı">
-    <input type="text" id="ingredient" placeholder="Malzemeler (virgülle ayrılmış)">
+    <form onsubmit="app.addRecipe(event)">
+      <input type="text" id="recipe" placeholder="Tarife Adı" required>
+      <input type="text" id="ingredient" placeholder="Malzemeler (virgülle ayrılmış)" required>
+      <input type="text" id="imageUrl" placeholder="Resim URL'sini buraya girin">
 
-    <button onclick="app.addRecipe()">Tarife Ekle</button>
+      <button type="submit">Tarife Ekle</button>
+    </form>
+
   </div>
 </div>
-
+<div class="container">
+  <div class="display-section">
+    <h2>Tarifeler</h2>
+    <div id="tariffs" class="cards"></div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
