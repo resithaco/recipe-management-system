@@ -34,8 +34,8 @@ class RecipeApp {
     const newRecipe = {
       id: Date.now(),
       recipe: recipeName,
+      image: imageUrl,
       ingredients: ingredients.split(","),
-      image:imageUrl,
       isFavorite: false
     };
 
@@ -56,18 +56,18 @@ class RecipeApp {
     if (!resultDiv) return;
 
     resultDiv.innerHTML = "";
-
     this.recipes.forEach(({ id, recipe, ingredients, isFavorite,image}) => {
       resultDiv.innerHTML += `
         <div class="card">
           <h3>${recipe}</h3>
-          <img src=${image} class="card-img">
+          <img src="${image}" class="card-img">
           <p>${ingredients.join(", ")}</p>
-          <p>${isFavorite ? "⭐ Favori" : ""}</p>
-          <button onclick="app.toggleFavorite(${id})">Favori</button>
+          <p>${isFavorite ? " Favori" : ""}</p>
+          <button onclick="app.toggleFavorite(${id})"> Favori</button>
         </div>
       `;
     });
+    console.log(image);
   }
 
   toggleFavorite = (id) => {

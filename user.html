@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/burger.png">
+<title>LezzetJet</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+
+<header class="topbar-glass">
+    <div class="topbar-inner">
+        <div class="topbar-main">
+            <div class="logo-warp">
+                <div class="logo-mark">LJ</div>
+                <div class="brand-copy">
+                    <small>yemek siparişi</small>
+                    <strong>LezzetJet</strong>
+                </div>
+            </div>
+            <div class="location-trigger">
+                <p class="location" id="locationText"> konum</p>
+            </div>
+            <div class="lid-basket">
+                <a class="basket-button">sepet</a>
+            </div>
+            <div class="lid-profile">
+                <a class="profile" type="button">profil</a>
+            </div>
+            <label class="search" for="search-input" >
+                <input id="search-input" type="search" placeholder="Restoran veya yemek ara...">
+            </label>
+        </div>
+    </div>
+    </header>
+
+<div class="container">
+  <div class="add-section">
+    <h2>Tarife Ekle</h2>
+
+    <form onsubmit="app.addRecipe(event)">
+      <input type="text" id="recipe" placeholder="Tarife Adı" required>
+      <input type="text" id="ingredient" placeholder="Malzemeler (virgülle ayrılmış)" required>
+      <input type="text" id="imageUrl" placeholder="Resim URL'sini buraya girin">
+
+      <button type="submit">Tarife Ekle</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="display-section">
+    <h2>Tarifeler</h2>
+    <div id="tariffs" class="cards"></div>
+  </div>
+</div> 
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="fppter-section">
+                <h2 class="logo">LezzetJet</h2>
+                <p>Şehrinizde en hızlı yemek teslimatı</p>
+            </div>
+            <section class="footer-section">
+                <h3>Menü</h3>
+                <ul>
+                    <li><a href="#">Restorantlar</a></li>
+                    <li><a href="#">Kampanyalar</a></li>
+                    <li><a href="#">Siparişlerim</a></li>
+                    <li><a href="#">Destek</a></li>
+                </ul>
+            </section>
+            <section class="footer-section">
+                <h3>Hesabım</h3>
+                <ul>
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                    <li><a href="#">Adreslerim</a></li>
+                </ul>
+            </section>
+            <section class="footer-section">
+                <h3>İletişim</h3>
+                <p>Antalya</p>
+                <p>0850 000 00 00</p>
+                <p>support@lezzetjet.com</p>
+            </section>
+        </div>
+        <div class="footer-cta">
+            <button>Separiş Ver</button>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LezzetJet - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+<script src="location.js"></script>
+</body>
+</html>

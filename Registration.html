@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="index.css">
-<title>Registration</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Registration.css">
 </head>
 <body>
-
-<form action="index.html">
-    <h2>Kayıt Formu</h2>
-
-    <div class="form-group">
-        <label>Ad Soyad</label>
-        <input type="text" name="adSoyad" required>
+    <div class="card-container" id="cardContainer">
+        <div class="card">
+            <form onsubmit="user.LogIn(event)" class="card-face card-front" >
+                <div class="app-name">LezzetJet</div>
+                <h2>Giriş Yap</h2>
+                <label for="username" class="input-group">
+                    <input type="text" id="username" placeholder="kullanıcı adı" required>
+                </label>
+                <label for="password" class="input-group">
+                    <input type="password" id="password" placeholder="Şifre" required>
+                </label>
+                <button type="submit">Giriş Yap</button>
+                <button type="button" onclick="flipCard()">Kayıt Ol</button>
+                <a href="#">Şifremi Unuttum?</a>
+            </form>
+            <form onsubmit="user.Register(event)" class="card-face card-back">
+                <div class="app-name">LezzetJet</div>
+                <h2>Kayıt Ol</h2>
+                <label for="newUsername" class="input-group">
+                    <input type="text" id="newUsername" placeholder="Kullanıcı Adı" required>
+                </label>
+                <label for="newEmail" class="input-group">
+                    <input type="email" id="newEmail" placeholder="E-posta Adresi" required>
+                </label>
+                <label for="password" class="input-group">
+                    <input type="password" id="newPassword" placeholder="Şifre" required>
+                </label>
+                <select name="Hesap Türü" id="accountType" required>
+                    <option value="">Hesap Türünü</option>
+                    <option value="restaurant">Restoran</option>
+                    <option value="user">Müşteri</option>
+                    <option value="delivery">Kurye</option>
+                </select>
+                <button  type="submit" >Kayıt Ol</button>
+                <button type="button" onclick="flipCard()">Geri Dön</button>
+            </form>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label>E-posta</label>
-        <input type="email" name="email" required>
-    </div>
-
-    <div class="form-group">
-        <label>Tarih</label>
-        <input type="date" name="tarih" required>
-    </div>
-
-    <div class="form-group">
-        <label>Cinsiyet</label>
-        <select name="cinsiyet" required>
-            <option value="">Seçiniz</option>
-            <option value="erkek">Erkek</option>
-            <option value="kadin">Kadın</option>
-        </select>
-    </div>
-
-    <button type="submit">Gönder</button>
-</form>
-
 </body>
+<script src="Registration.js"></script>
 </html>

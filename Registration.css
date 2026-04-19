@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#e6e6f1,#6c5ce7);
+    perspective: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-container{
+    width: 35%;
+    min-width: 320px;
+    perspective: 1200px;
+}
+.card{
+    width: 100%;
+    min-height: 550px;
+    transition: transform 0.8s cubic-bezier(0.175,0.885,0.32,1.275);
+    transform-style: preserve-3d;
+    position: relative;
+}
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-front{
+    transform: rotateY(0deg);
+}
+.card-back{
+    transform: rotateY(180deg);
+}
+.card-container.flip .card{
+    transform: rotateY(180deg);
+}
+.card-container.flip .card-front{
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.card-container:not(.flip) .card-back{
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.card-container.flip .card-back,
+.card-container:not(.flip) .card-front{
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+.app-name{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg,#ffffff,#ffe600);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0px);}
+}
+.card h2{
+    color: white;
+    margin-bottom: 25px;
+}
+.input-group{
+    margin-bottom: 15px;
+}
+input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background:rgba(255, 255,255, 0.2);
+    color: white;
+    box-sizing: border-box;
+}
+input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background: white;
+    color: #333;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+button:hover{
+    background: #f1f1f1;
+    transform: translateY(-2px);
+}
+a{
+    display:block ;
+    margin-top: 15px;
+    color: #ffe600;
+    text-decoration: none;
+    font-size: 14px;
+}
+a:hover{
+    text-decoration: underline;
+}

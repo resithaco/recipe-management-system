@@ -1,0 +1,135 @@
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --bg: #f5f5f5;
+    --text: #333;
+}
+
+header{
+    margin: 4px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: left;
+}
+.topbar-glass{
+    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.topbar-inner{
+    max-width: 1200px;
+    margin: auto;
+    padding:10px 20px;
+}
+.topbar-main{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+.logo-warp{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.logo-mark{
+    background: #46474b;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+.brand-copy small{
+    display: block;
+    font-size: 12px;
+    color: gray;
+}
+.brand-copy strong{
+    font-size: 16px;
+}
+.location-trigger{
+    padding: 12px 16px;
+    box-shadow:0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.location-trigger:hover{
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    background: rgba(255,255,255,0.25);
+}
+.location-trigger:active {
+    transform: scale(0.97);
+}
+.location{
+    font-size: 14px;
+    color: #333;
+}
+.basket-button{
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #ffa502;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.basket-button:hover{
+    background: #e69500;
+}
+.profile{
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #3742fa;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+} .profile:hover{
+    background: #2f35d1;
+}
+.lid-basket,
+.lid-profile {
+    flex-shrink: 1;
+    margin: auto;
+}
+.search{
+    flex: 1 1 200px;
+    max-width: 400px;
+    min-width: 150px;
+}
+.search input{
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+.search input:focus{
+
+    border-color: #ff4757;
+    box-shadow: 0 0 5px rgba(255, 71, 87, 0.3);
+}
+.topbar-main > * {
+    min-width: 0;
+}
+@media (max-width: 768px){
+    .topbar-main{
+    flex-wrap: wrap;
+    }
+}
