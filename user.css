@@ -169,4 +169,7 @@ button:hover {
     .img-container{
         height: 160px;
     }
+    .food-img{
+        object-position: center;
+    }
 }
