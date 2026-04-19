@@ -56,18 +56,46 @@ class RecipeApp {
     if (!resultDiv) return;
 
     resultDiv.innerHTML = "";
-    this.recipes.forEach(({ id, recipe, ingredients, isFavorite,image}) => {
+    this.recipes.forEach(({ id,
+      recipe,
+      ingredients,
+      isFavorite,
+      image,
+      rating,
+      ratingCount,
+      deliveryTime,
+      priceLevel,
+      minOrder,
+      isFreeDelivery,
+      discount,
+      plus
+    }) => {
       resultDiv.innerHTML += `
-        <div class="card">
-          <h3>${recipe}</h3>
-          <img src="${image}" class="card-img">
-          <p>${ingredients.join(", ")}</p>
-          <p>${isFavorite ? " Favori" : ""}</p>
-          <button onclick="app.toggleFavorite(${id})"> Favori</button>
+      <div class="food-card">
+      <div class="img-container">
+        <img src="${image}" class="card-img">
+        <div class="fav-icon" onclick="app.toggleFavorite(${id})">
+        ${isFavorite ? "❤️" : "🤍"}
         </div>
-      `;
+      </div>
+      <div class="food-info">
+        <h3>${recipe}</h3>
+        <div class="rating">
+            ⭐ ${rating} <span>(${ratingCount})</span>
+        </div>
+        <div class="details">
+            <span>${deliveryTime}</span> • 
+            <span>${priceLevel}</span> •
+            <span>Min.sepet tutarı ${minOrder} TL</span>
+        </div>
+        <div class="tags">
+            ${isFreeDelivery ? `<span class="free">Ücretsiz</span>` : ""}
+            ${discount ? `<span class="discount">%${discount} Seçili ürünlerde</span>` : ""}
+            ${plus ? `<span class="plus">+${plus}</span>` : ""}
+        </div>
+      </div>
+      </div>`;
     });
-    console.log(image);
   }
 
   toggleFavorite = (id) => {

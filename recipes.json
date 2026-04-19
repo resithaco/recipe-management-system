@@ -2,71 +2,141 @@
   {
     "id": 1,
     "recipe": "Pizza",
-    "ingredients": ["cheese", "tomato"],
     "image": "https://media-cdn.tripadvisor.com/media/photo-s/1b/3d/36/a0/fresh-hand-stretched.jpg",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.3,
+    "ratingCount": "800+",
+    "deliveryTime": "25-40",
+    "priceLevel": "₺₺",
+    "minOrder": 120,
+    "isFreeDelivery": true,
+    "discount": 15,
+    "plus": 1
   },
   {
     "id": 2,
     "recipe": "Soup",
-    "ingredients": ["water", "salt"],
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmgbMNTApICag3wBeDZsA7331wLnEMi9pPBw&s",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 3.8,
+    "ratingCount": "200+",
+    "deliveryTime": "15-25",
+    "priceLevel": "₺",
+    "minOrder": 50,
+    "isFreeDelivery": false,
+    "discount": 0,
+    "plus": 0
   },
   {
     "id": 3,
     "recipe": "Burger",
-    "ingredients": ["meat", "bread"],
     "image": "https://png.pngtree.com/png-clipart/20250524/original/pngtree-juicy-delicious-beef-burger-with-fresh-toppings-png-image_21069949.png",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.5,
+    "ratingCount": "1K+",
+    "deliveryTime": "20-35",
+    "priceLevel": "₺₺",
+    "minOrder": 100,
+    "isFreeDelivery": true,
+    "discount": 20,
+    "plus": 2
   },
   {
     "id": 4,
     "recipe": "Pasta",
-    "ingredients": ["pasta", "sauce"],
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNXCHTpuTLm2g-_LTwWrtxHYUw4Pr9e0eQEQ&s",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.1,
+    "ratingCount": "600+",
+    "deliveryTime": "30-50",
+    "priceLevel": "₺₺",
+    "minOrder": 110,
+    "isFreeDelivery": false,
+    "discount": 10,
+    "plus": 1
   },
   {
     "id": 5,
     "recipe": "Salad",
-    "ingredients": ["lettuce", "tomato"],
     "image": "https://www.refreshmyhealth.com/wp-content/uploads/2020/07/how-to-make-a-simple-salad-recipe-vegan-gluten-free-lunch_260-main_img_6804-lrcc.jpg",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.0,
+    "ratingCount": "300+",
+    "deliveryTime": "15-20",
+    "priceLevel": "₺",
+    "minOrder": 60,
+    "isFreeDelivery": true,
+    "discount": 5,
+    "plus": 0
   },
   {
     "id": 6,
     "recipe": "Fried Chicken",
-    "ingredients": ["chicken", "oil"],
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDKgg3-E437VCI1x1i4_QtAVUoHBcs2u09Aw&s",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.6,
+    "ratingCount": "900+",
+    "deliveryTime": "25-45",
+    "priceLevel": "₺₺",
+    "minOrder": 130,
+    "isFreeDelivery": true,
+    "discount": 18,
+    "plus": 2
   },
   {
     "id": 7,
     "recipe": "Rice",
-    "ingredients": ["rice", "water"],
     "image": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/7a50544f-7025-484c-ab9c-b68d9a138242/Derivates/2dbce5cd-ed5d-48be-8ef5-6eb1c7b42078.jpg",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 3.9,
+    "ratingCount": "150+",
+    "deliveryTime": "20-30",
+    "priceLevel": "₺",
+    "minOrder": 70,
+    "isFreeDelivery": false,
+    "discount": 0,
+    "plus": 0
   },
   {
     "id": 8,
     "recipe": "Steak",
-    "ingredients": ["meat", "salt"],
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN9CLC-79KxxUgmbhkp3BpETCt9DBoZnm8wA&s",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.7,
+    "ratingCount": "1.2K+",
+    "deliveryTime": "35-60",
+    "priceLevel": "₺₺₺",
+    "minOrder": 200,
+    "isFreeDelivery": true,
+    "discount": 25,
+    "plus": 3
   },
   {
     "id": 9,
     "recipe": "Sandwich",
-    "ingredients": ["bread", "cheese"],
     "image": "https://assets.bonappetit.com/photos/62b1f659a38f8b1339b88af8/1:1/w_2560%2Cc_limit/20220615-0622-sandwiches-1746-final%2520(1).jpg",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 4.2,
+    "ratingCount": "400+",
+    "deliveryTime": "15-25",
+    "priceLevel": "₺",
+    "minOrder": 80,
+    "isFreeDelivery": true,
+    "discount": 12,
+    "plus": 1
   },
   {
     "id": 10,
     "recipe": "Omelette",
-    "ingredients": ["egg", "salt"],
     "image": "https://www.wholesomeyum.com/wp-content/uploads/2023/08/wholesomeyum-Omelette-Recipe-7-500x375.jpg",
-    "isFavorite": false
+    "isFavorite": false,
+    "rating": 3.7,
+    "ratingCount": "100+",
+    "deliveryTime": "10-20",
+    "priceLevel": "₺",
+    "minOrder": 40,
+    "isFreeDelivery": false,
+    "discount": 0,
+    "plus": 0
   }
 ]

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="images/burger.png">
 <title>LezzetJet</title>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="user.css">
 <link rel="stylesheet" href="nav.css">
 <link rel="stylesheet" href="footer.css">
 </head>
@@ -36,29 +36,10 @@
             </label>
         </div>
     </div>
-    </header>
-
+</header> 
 <div class="container">
-  <div class="add-section">
-    <h2>Tarife Ekle</h2>
-
-    <form onsubmit="app.addRecipe(event)">
-      <input type="text" id="recipe" placeholder="Tarife Adı" required>
-      <input type="text" id="ingredient" placeholder="Malzemeler (virgülle ayrılmış)" required>
-      <input type="text" id="imageUrl" placeholder="Resim URL'sini buraya girin">
-
-      <button type="submit">Tarife Ekle</button>
-    </form>
-  </div>
-</div>
-
-
-<div class="container">
-  <div class="display-section">
-    <h2>Tarifeler</h2>
     <div id="tariffs" class="cards"></div>
-  </div>
-</div> 
+</div>
 
 <footer class="footer">
         <div class="footer-container">
@@ -98,7 +79,7 @@
         </div>
     </footer>
 
-<script src="script.js"></script>
+<script src="user.js"></script>
 <script src="location.js"></script>
 </body>
 </html>

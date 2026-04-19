@@ -13,7 +13,7 @@ const user={
                 localStorage.setItem("username",username);
                 localStorage.setItem("role",users[username].role);
                 if (users[username].role==="restaurant"){
-                    window.location.href="admin.html";
+                    window.location.href="restaurant.html";
                 } else if(users[username].role==="delivery"){
                     window.location.href="delivery.html";
                 }else if(users[username].role==="user"){
