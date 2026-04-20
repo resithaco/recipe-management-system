@@ -138,18 +138,18 @@ button:hover {
 }
 .food-info{
     padding: 12px;
-    color: #fff;
+    color: #222;
 }
 .food-info h3{
     margin: 0;
 }
 .rating{
-    color: #e53935;
-    font-weight: bold;
+    color: #ff4757;
+    font-weight: 600;
 }
 .details{
     font-size: 13px;
-    color:rgba(255,255,255,0.7);
+    color:#555;
 }
 .tags span{
     display: inline-block;
