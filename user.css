@@ -425,7 +425,6 @@ h2 {
         order: 2;
     }
     .glass {
-    background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
