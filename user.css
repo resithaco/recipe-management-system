@@ -98,14 +98,18 @@ button:hover {
 }
 .food-card{
     height: 320px;
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: 16px;
     overflow: hidden;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     transition: 0.3s;
 }
 .food-card:hover{
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
 }
 .img-container{
     height: 180px;
@@ -116,19 +120,25 @@ button:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: center;
+    transition: 0.4s;
+}
+.food-card .food-img{
+    transform: scale(1.1);
 }
 .fav-icon{
     position: absolute;
     top: 10px;
     right: 10px;
-    background: white;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
     padding: 6px;
     border-radius: 50%;
     cursor: pointer;
 }
 .food-info{
     padding: 12px;
+    color: #fff;
 }
 .food-info h3{
     margin: 0;
@@ -139,7 +149,7 @@ button:hover {
 }
 .details{
     font-size: 13px;
-    color: #666;
+    color:rgba(255,255,255,0.7);
 }
 .tags span{
     display: inline-block;
@@ -170,6 +180,6 @@ button:hover {
         height: 160px;
     }
     .food-img{
-        object-position: center center;
+        object-position: center;
     }
 }

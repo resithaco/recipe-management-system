@@ -4,9 +4,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,#e6e6f1,#6c5ce7);
+    background: linear-gradient(135deg,#667eea,#764ba2);
     perspective: 1000px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", sans-serif ,Arial;
 }
 .card-container{
     width: 35%;
