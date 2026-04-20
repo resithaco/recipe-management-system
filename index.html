@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LezzetJet</title>
-    <link rel="stylesheet" href="Registration.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="card-container" id="cardContainer">
@@ -34,17 +34,22 @@
                 <label for="password" class="input-group">
                     <input type="password" id="newPassword" placeholder="Şifre" required>
                 </label>
-                <select name="Hesap Türü" id="accountType" required>
-                    <option value="">Hesap Türünü</option>
-                    <option value="restaurant">Restoran</option>
-                    <option value="user">Müşteri</option>
-                    <option value="delivery">Kurye</option>
-                </select>
+                <div class="select-group">
+                    <select class="accountType" id="accountType" required>
+                        <option value="">Hesap Türünü Seç</option>
+                        <option value="restaurant">🍔 Restoran</option>
+                        <option value="user">👤 Müşteri</option>
+                        <option value="delivery">🛵 Kurye</option>
+                    </select>
+                    <span class="select-arrow">
+                        ▼
+                    </span>
+                </div>
                 <button  type="submit" >Kayıt Ol</button>
                 <button type="button" onclick="flipCard()">Geri Dön</button>
             </form>
         </div>
     </div>
 </body>
-<script src="Registration.js"></script>
+<script src="index.js"></script>
 </html>
