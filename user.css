@@ -391,3 +391,29 @@ h2 {
     background: #e0f2f1;
     color: #00695c;
 }
+@media (max-width:600px) {
+
+    /* السطر الأول */
+    .topbar-main {
+        order: 1;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* السطر الثاني (البحث) */
+    .search-shell {
+        order: 2;
+        width: 100%;
+    }
+
+    /* السطر الثالث (السلة + البروفايل) */
+    .icon-button {
+        order: 3;
+    }
+
+    #openCartButton,
+    #profileButton {
+        margin-top: 6px;
+    }
+
+}
