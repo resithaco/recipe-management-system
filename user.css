@@ -239,8 +239,8 @@ input {
 .bottom-nav button:active {
     transform: scale(0.95);
 }
-.bottom-nav button.active {
-    background: rgba(255, 46, 68, 0.12);
+.bottom-nav{
+    background: rgba(255, 46, 68, 0.05);
     color: var(--primary);
 }
 .mini-badge {
@@ -290,9 +290,11 @@ h2 {
     box-shadow: 0 12px 35px rgba(0,0,0,0.3);
 }
 .img-container{
+    border-radius: 16px;
     height: 180px;
     overflow: hidden;
     position: relative;
+    
 }
 .img-container::after{
     content: "";
@@ -301,15 +303,8 @@ h2 {
     left: 0;
     right: 0;
     height: 60%;
-    backdrop-filter: blur(2px);
+    
     background: linear-gradient(to top,rgba(0,0,0,0.6),transparent);
-}
-.food-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: 0.4s;
 }
 .fav-icon{
     position: absolute;

@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="images/burger.png">
     <title>LezzetJet</title>
     <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="restaurantPage.css">
 </head>
 <body>
 <header class="topbar glass">
@@ -41,7 +42,7 @@
         </label>
     </div>
 </header>
-<div class="container">
+<div id="HomePage" class="container">
     <div id="tariffs" class="cards"></div>
 </div>
 <nav class="bottom-nav glass" aria-label="Mobil menü">
@@ -76,6 +77,18 @@
         <span>Profil</span>
     </button>
 </nav>
+<div id="homePage"></div>
+
+<div class="restaurant-page" id="restaurantPage" style="display:none;">
+    <div class="top-bar">
+        <button onclick="app.goBack()">⬅</button>
+        <h2 id="resName"></h2>
+    </div>
+    <div class="restaurant-header">
+        <img id="resImage">
+    </div>
+    <div class="menu-grid" id="menu"></div>
+</div>
 <script src="user.js"></script>
 <script src="location.js"></script>
 </body>

@@ -51,52 +51,62 @@ class RecipeApp {
   }
 
   renderRecipes = () => {
-    const resultDiv = document.getElementById("tariffs");
+  const resultDiv = document.getElementById("tariffs");
 
-    if (!resultDiv) return;
+  if (!resultDiv) return;
 
-    resultDiv.innerHTML = "";
-    this.recipes.forEach(({ id,
-      recipe,
-      ingredients,
-      isFavorite,
-      image,
-      rating,
-      ratingCount,
-      deliveryTime,
-      priceLevel,
-      minOrder,
-      isFreeDelivery,
-      discount,
-      plus
-    }) => {
-      resultDiv.innerHTML += `
-      <div class="food-card">
+  resultDiv.innerHTML = "";
+
+  this.recipes.forEach(({ id,
+    recipe,
+    isFavorite,
+    image,
+    rating,
+    ratingCount,
+    deliveryTime,
+    priceLevel,
+    minOrder,
+    isFreeDelivery,
+    discount,
+    plus
+  }) => {
+
+    resultDiv.innerHTML += `
+    <div onclick="app.openRestaurant(${id})" class="food-card">
+
       <div class="img-container">
         <img src="${image}" class="card-img">
+
         <div class="fav-icon" onclick="app.toggleFavorite(${id})">
-        ${isFavorite ? "❤️" : "🤍"}
+          ${isFavorite ? "❤️" : "🤍"}
         </div>
+
       </div>
+
       <div class="food-info">
         <h3>${recipe}</h3>
+
         <div class="rating">
-            ⭐ ${rating} <span>(${ratingCount})</span>
+          ⭐ ${rating} <span>(${ratingCount})</span>
         </div>
+
         <div class="details">
-            <span>${deliveryTime}</span> • 
-            <span>${priceLevel}</span> •
-            <span>Min.sepet tutarı ${minOrder} TL</span>
+          <span>${deliveryTime}</span> • 
+          <span>${priceLevel}</span> •
+          <span>Min.sepet tutarı ${minOrder} TL</span>
         </div>
+
         <div class="tags">
-            ${isFreeDelivery ? `<span class="free">Ücretsiz</span>` : ""}
-            ${discount ? `<span class="discount">%${discount} Seçili ürünlerde</span>` : ""}
-            ${plus ? `<span class="plus">+${plus}</span>` : ""}
+          ${isFreeDelivery ? `<span class="free">Ücretsiz</span>` : ""}
+          ${discount ? `<span class="discount">%${discount} Seçili ürünlerde</span>` : ""}
+          ${plus ? `<span class="plus">+${plus}</span>` : ""}
         </div>
+
       </div>
-      </div>`;
-    });
-  }
+    </div>
+    `;
+  });
+}
 
   toggleFavorite = (id) => {
     const recipe = this.recipes.find(r => r.id === id);
@@ -108,7 +118,44 @@ class RecipeApp {
     localStorage.setItem("recipes", JSON.stringify(this.recipes));
     this.renderRecipes();
   }
+openRestaurant = (id) => {
 
+  const restaurant = this.recipes.find(r => r.id === id);
+  if (!restaurant) return;
+
+  document.getElementById("HomePage").style.display = "none";
+  document.getElementById("restaurantPage").style.display = "block";
+
+  document.getElementById("resName").innerText = restaurant.recipe;
+  document.getElementById("resImage").src = restaurant.image;
+
+  const menuDiv = document.getElementById("menu");
+
+  if (restaurant.menu) {
+
+    let html = "";
+
+restaurant.menu.forEach(item => {
+  html += `
+    <div class="menu-item">
+      <img src="${item.image || 'https://via.placeholder.com/150'}">
+      <h4>${item.name}</h4>
+      <p>₺${item.price}</p>
+      <button class="add-btn" onclick="app.addToCart(${item.id})">+</button>
+    </div>
+  `;
+});
+
+menuDiv.innerHTML = html;
+
+} else {
+    menuDiv.innerHTML = "<p>Menü böş</p>";
 }
-
+}
+goBack() {
+  document.getElementById("HomePage").style.display = "block";
+  document.getElementById("restaurantPage").style.display = "none";
+}
+}
 const app = new RecipeApp();
+
