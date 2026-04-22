@@ -1,11 +1,11 @@
 [
-{ "key": "Tümü","label": "Tümü", "icon": "🍽" },
-{ "key": "Burger","label": "Burger", "icon": "🍔" },
-{ "key": "Pizza","label": "Pizza", "icon": "🍕" },
-{ "key": "Döner","label": "Döner", "icon": "🥙" },
-{ "key": "Kebap","label": "Kebap", "icon": "🍢" },
-{ "key": "Tatlı","label": "Tatlı", "icon": "🍰" },
-{ "key": "İçecek","label": "İçecek", "icon": "🥤" },
-{ "key": "Tavuk", "label": "Tavuk", "icon": "🍗" },
-{ "key": "Kahvaltı","label": "Kahvaltı", "icon": "🍳" }
+    { "key": "all", "label": "Tümü", "icon": "🍽" },
+    { "key": "burger", "label": "Burger", "icon": "🍔" },
+    { "key": "pizza", "label": "Pizza", "icon": "🍕" },
+    { "key": "doner", "label": "Döner", "icon": "🥙" },
+    { "key": "kebap", "label": "Kebap", "icon": "🍢" },
+    { "key": "tatli", "label": "Tatlı", "icon": "🍰" },
+    { "key": "icecek", "label": "İçecek", "icon": "🥤" },
+    { "key": "tavuk", "label": "Tavuk", "icon": "🍗" },
+    { "key": "kahvalti", "label": "Kahvaltı", "icon": "🍳" }
 ]

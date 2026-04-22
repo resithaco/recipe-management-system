@@ -1,262 +1,310 @@
 [
   {
     "id": 1,
-    "recipe": "Pizza",
-    "image": "https://media-cdn.tripadvisor.com/media/photo-s/1b/3d/36/a0/fresh-hand-stretched.jpg",
-    "isFavorite": false,
-    "rating": 4.3,
-    "ratingCount": "800+",
-    "deliveryTime": "25-40",
+    "recipe": "Big Burger",
+    "category": "burger",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.5,
+    "ratingCount": "200+",
+    "deliveryTime": "20-30 dk",
     "priceLevel": "₺₺",
-    "minOrder": 120,
-    "isFreeDelivery": true,
-    "discount": 15,
-    "plus": 1,
+    "minOrder": 50,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 101, "name": "Cheese Burger", "price": 120, "image": "https://via.placeholder.com/150" },
+      { "id": 102, "name": "Double Burger", "price": 150, "image": "https://via.placeholder.com/150" }
     ]
   },
   {
     "id": 2,
-    "recipe": "Soup",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmgbMNTApICag3wBeDZsA7331wLnEMi9pPBw&s",
-    "isFavorite": false,
-    "rating": 3.8,
-    "ratingCount": "200+",
-    "deliveryTime": "15-25",
+    "recipe": "Cheese Burger House",
+    "category": "burger",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.2,
+    "ratingCount": "150+",
+    "deliveryTime": "20-25 dk",
     "priceLevel": "₺",
-    "minOrder": 50,
-    "isFreeDelivery": false,
-    "discount": 0,
-    "plus": 0,
+    "minOrder": 40,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 201, "name": "Classic Burger", "price": 110, "image": "https://via.placeholder.com/150" },
+      { "id": 202, "name": "BBQ Burger", "price": 140, "image": "https://via.placeholder.com/150" }
     ]
   },
+
   {
     "id": 3,
-    "recipe": "Burger",
-    "image": "https://png.pngtree.com/png-clipart/20250524/original/pngtree-juicy-delicious-beef-burger-with-fresh-toppings-png-image_21069949.png",
-    "isFavorite": false,
-    "rating": 4.5,
-    "ratingCount": "1K+",
-    "deliveryTime": "20-35",
-    "priceLevel": "₺₺",
-    "minOrder": 100,
-    "isFreeDelivery": true,
-    "discount": 20,
-    "plus": 2,
+    "recipe": "Italian Pizza",
+    "category": "pizza",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.7,
+    "ratingCount": "500+",
+    "deliveryTime": "25-35 dk",
+    "priceLevel": "₺₺₺",
+    "minOrder": 70,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 301, "name": "Margherita", "price": 130, "image": "https://via.placeholder.com/150" },
+      { "id": 302, "name": "Pepperoni", "price": 160, "image": "https://via.placeholder.com/150" }
     ]
   },
   {
     "id": 4,
-    "recipe": "Pasta",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNXCHTpuTLm2g-_LTwWrtxHYUw4Pr9e0eQEQ&s",
-    "isFavorite": false,
-    "rating": 4.1,
-    "ratingCount": "600+",
-    "deliveryTime": "30-50",
+    "recipe": "Pizza Express",
+    "category": "pizza",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.6,
+    "ratingCount": "300+",
+    "deliveryTime": "25-30 dk",
     "priceLevel": "₺₺",
-    "minOrder": 110,
-    "isFreeDelivery": false,
-    "discount": 10,
-    "plus": 1,
+    "minOrder": 60,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 401, "name": "Vegetarian Pizza", "price": 140, "image": "https://via.placeholder.com/150" },
+      { "id": 402, "name": "Chicken Pizza", "price": 150, "image": "https://via.placeholder.com/150" }
     ]
   },
+
   {
     "id": 5,
-    "recipe": "Salad",
-    "image": "https://www.refreshmyhealth.com/wp-content/uploads/2020/07/how-to-make-a-simple-salad-recipe-vegan-gluten-free-lunch_260-main_img_6804-lrcc.jpg",
-    "isFavorite": false,
-    "rating": 4.0,
-    "ratingCount": "300+",
-    "deliveryTime": "15-20",
+    "recipe": "Chicken Döner",
+    "category": "doner",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.3,
+    "ratingCount": "150+",
+    "deliveryTime": "15-25 dk",
     "priceLevel": "₺",
-    "minOrder": 60,
-    "isFreeDelivery": true,
-    "discount": 5,
-    "plus": 0,
+    "minOrder": 40,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 501, "name": "Döner Ekmek", "price": 80, "image": "https://via.placeholder.com/150" },
+      { "id": 502, "name": "Dürüm", "price": 90, "image": "https://via.placeholder.com/150" }
     ]
   },
   {
     "id": 6,
-    "recipe": "Fried Chicken",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDKgg3-E437VCI1x1i4_QtAVUoHBcs2u09Aw&s",
-    "isFavorite": false,
-    "rating": 4.6,
-    "ratingCount": "900+",
-    "deliveryTime": "25-45",
-    "priceLevel": "₺₺",
-    "minOrder": 130,
-    "isFreeDelivery": true,
-    "discount": 18,
-    "plus": 2,
+    "recipe": "Et Döner Center",
+    "category": "doner",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.4,
+    "ratingCount": "180+",
+    "deliveryTime": "15-20 dk",
+    "priceLevel": "₺",
+    "minOrder": 35,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 601, "name": "Et Döner", "price": 95, "image": "https://via.placeholder.com/150" },
+      { "id": 602, "name": "İskender", "price": 130, "image": "https://via.placeholder.com/150" }
     ]
   },
+
   {
     "id": 7,
-    "recipe": "Rice",
-    "image": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/7a50544f-7025-484c-ab9c-b68d9a138242/Derivates/2dbce5cd-ed5d-48be-8ef5-6eb1c7b42078.jpg",
-    "isFavorite": false,
-    "rating": 3.9,
-    "ratingCount": "150+",
-    "deliveryTime": "20-30",
-    "priceLevel": "₺",
-    "minOrder": 70,
-    "isFreeDelivery": false,
-    "discount": 0,
-    "plus": 0,
+    "recipe": "Adana Kebap",
+    "category": "kebap",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.8,
+    "ratingCount": "400+",
+    "deliveryTime": "30-40 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 60,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 701, "name": "Adana", "price": 140, "image": "https://via.placeholder.com/150" },
+      { "id": 702, "name": "Urfa", "price": 135, "image": "https://via.placeholder.com/150" }
     ]
   },
   {
     "id": 8,
-    "recipe": "Steak",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN9CLC-79KxxUgmbhkp3BpETCt9DBoZnm8wA&s",
-    "isFavorite": false,
-    "rating": 4.7,
-    "ratingCount": "1.2K+",
-    "deliveryTime": "35-60",
-    "priceLevel": "₺₺₺",
-    "minOrder": 200,
-    "isFreeDelivery": true,
-    "discount": 25,
-    "plus": 3,
+    "recipe": "Kebap House",
+    "category": "kebap",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.6,
+    "ratingCount": "350+",
+    "deliveryTime": "30-35 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 55,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 801, "name": "Tavuk Şiş", "price": 120, "image": "https://via.placeholder.com/150" },
+      { "id": 802, "name": "Karışık Kebap", "price": 160, "image": "https://via.placeholder.com/150" }
     ]
   },
+
   {
     "id": 9,
-    "recipe": "Sandwich",
-    "image": "https://assets.bonappetit.com/photos/62b1f659a38f8b1339b88af8/1:1/w_2560%2Cc_limit/20220615-0622-sandwiches-1746-final%2520(1).jpg",
-    "isFavorite": false,
-    "rating": 4.2,
-    "ratingCount": "400+",
-    "deliveryTime": "15-25",
-    "priceLevel": "₺",
-    "minOrder": 80,
-    "isFreeDelivery": true,
-    "discount": 12,
-    "plus": 1,
+    "recipe": "Tatlı Dünyası",
+    "category": "tatli",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.9,
+    "ratingCount": "800+",
+    "deliveryTime": "10-20 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 30,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 901, "name": "Baklava", "price": 100, "image": "https://via.placeholder.com/150" },
+      { "id": 902, "name": "Künefe", "price": 110, "image": "https://via.placeholder.com/150" }
     ]
   },
   {
     "id": 10,
-    "recipe": "Omelette",
-    "image": "https://www.wholesomeyum.com/wp-content/uploads/2023/08/wholesomeyum-Omelette-Recipe-7-500x375.jpg",
-    "isFavorite": false,
-    "rating": 3.7,
+    "recipe": "Sweet House",
+    "category": "tatli",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.7,
+    "ratingCount": "600+",
+    "deliveryTime": "15-25 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 35,
+    "menu": [
+      { "id": 1001, "name": "Sütlaç", "price": 70, "image": "https://via.placeholder.com/150" },
+      { "id": 1002, "name": "Kazandibi", "price": 75, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+
+  {
+    "id": 11,
+    "recipe": "Drink Station",
+    "category": "icecek",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.1,
     "ratingCount": "100+",
-    "deliveryTime": "10-20",
+    "deliveryTime": "5-10 dk",
+    "priceLevel": "₺",
+    "minOrder": 10,
+    "menu": [
+      { "id": 1101, "name": "Cola", "price": 30, "image": "https://via.placeholder.com/150" },
+      { "id": 1102, "name": "Ayran", "price": 20, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 12,
+    "recipe": "Fresh Drinks",
+    "category": "icecek",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.3,
+    "ratingCount": "120+",
+    "deliveryTime": "5-10 dk",
+    "priceLevel": "₺",
+    "minOrder": 10,
+    "menu": [
+      { "id": 1201, "name": "Portakal Suyu", "price": 40, "image": "https://via.placeholder.com/150" },
+      { "id": 1202, "name": "Limonata", "price": 35, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+
+  {
+    "id": 13,
+    "recipe": "Tavuk Grill",
+    "category": "tavuk",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.5,
+    "ratingCount": "220+",
+    "deliveryTime": "25-35 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 50,
+    "menu": [
+      { "id": 1301, "name": "Tavuk Şiş", "price": 120, "image": "https://via.placeholder.com/150" },
+      { "id": 1302, "name": "Tavuk Kanat", "price": 130, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 14,
+    "recipe": "Chicken Express",
+    "category": "tavuk",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.4,
+    "ratingCount": "200+",
+    "deliveryTime": "20-30 dk",
     "priceLevel": "₺",
     "minOrder": 40,
-    "isFreeDelivery": false,
-    "discount": 0,
-    "plus": 0,
     "menu": [
-      { "id": 1, "name": "Cheese Pizza", "price": 120 },
-      { "id": 2, "name": "Pepperoni Pizza", "price": 140 },
-      { "id": 3, "name": "BBQ Pizza", "price": 150 },
-      { "id": 4, "name": "Veggie Pizza", "price": 110 },
-      { "id": 5, "name": "Chicken Pizza", "price": 135 },
-      { "id": 6, "name": "Spicy Pizza", "price": 130 },
-      { "id": 7, "name": "Mix Pizza", "price": 160 },
-      { "id": 8, "name": "Mushroom Pizza", "price": 125 },
-      { "id": 9, "name": "Olive Pizza", "price": 115 },
-      { "id": 10, "name": "Double Cheese Pizza", "price": 145 }
+      { "id": 1401, "name": "Fried Chicken", "price": 110, "image": "https://via.placeholder.com/150" },
+      { "id": 1402, "name": "Chicken Burger", "price": 100, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+
+  {
+    "id": 15,
+    "recipe": "Kahvaltı Sarayı",
+    "category": "kahvalti",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.8,
+    "ratingCount": "500+",
+    "deliveryTime": "30-40 dk",
+    "priceLevel": "₺₺₺",
+    "minOrder": 80,
+    "menu": [
+      { "id": 1501, "name": "Serpme Kahvaltı", "price": 200, "image": "https://via.placeholder.com/150" },
+      { "id": 1502, "name": "Menemen", "price": 90, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 16,
+    "recipe": "Breakfast House",
+    "category": "kahvalti",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.6,
+    "ratingCount": "300+",
+    "deliveryTime": "20-25 dk",
+    "priceLevel": "₺",
+    "minOrder": 30,
+    "menu": [
+      { "id": 1601, "name": "Omlet", "price": 80, "image": "https://via.placeholder.com/150" },
+      { "id": 1602, "name": "Sucuklu Yumurta", "price": 95, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+
+  {
+    "id": 17,
+    "recipe": "Burger Zone",
+    "category": "burger",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.5,
+    "ratingCount": "210+",
+    "deliveryTime": "20-30 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 50,
+    "menu": [
+      { "id": 1701, "name": "Mega Burger", "price": 160, "image": "https://via.placeholder.com/150" },
+      { "id": 1702, "name": "Mini Burger", "price": 90, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 18,
+    "recipe": "Pizza World",
+    "category": "pizza",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.7,
+    "ratingCount": "510+",
+    "deliveryTime": "25-35 dk",
+    "priceLevel": "₺₺₺",
+    "minOrder": 70,
+    "menu": [
+      { "id": 1801, "name": "Mix Pizza", "price": 170, "image": "https://via.placeholder.com/150" },
+      { "id": 1802, "name": "Cheese Pizza", "price": 150, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 19,
+    "recipe": "Sweet Corner",
+    "category": "tatli",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.9,
+    "ratingCount": "820+",
+    "deliveryTime": "10-20 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 30,
+    "menu": [
+      { "id": 1901, "name": "Brownie", "price": 90, "image": "https://via.placeholder.com/150" },
+      { "id": 1902, "name": "Cheesecake", "price": 120, "image": "https://via.placeholder.com/150" }
+    ]
+  },
+  {
+    "id": 20,
+    "recipe": "Kebap City",
+    "category": "kebap",
+    "image": "https://via.placeholder.com/300",
+    "rating": 4.8,
+    "ratingCount": "420+",
+    "deliveryTime": "30-40 dk",
+    "priceLevel": "₺₺",
+    "minOrder": 60,
+    "menu": [
+      { "id": 2001, "name": "Lahmacun", "price": 50, "image": "https://via.placeholder.com/150" },
+      { "id": 2002, "name": "Pideli Kebap", "price": 140, "image": "https://via.placeholder.com/150" }
     ]
   }
 ]
