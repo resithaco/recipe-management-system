@@ -2,12 +2,12 @@ class RecipeApp {
   constructor() {
     this.activeCategory = "all";
     this.recipes = [];
-    this.categories = []; // تخزين التصنيفات لتقليل طلبات الشبكة
+    this.categories = [];
+    this.cart = []; // إضافة مصفوفة للسلة
 
     this.init();
   }
 
-  // دالة لتهيئة التطبيق وترتيب استدعاء البيانات
   async init() {
     await this.loadCategories();
     await this.loadRecipes();
@@ -15,6 +15,7 @@ class RecipeApp {
   }
 
   setupEventListeners() {
+    // 1. التعامل مع الضغط على التصنيفات
     const categoryRow = document.getElementById("categoryRow");
     categoryRow?.addEventListener("click", (e) => {
       const btn = e.target.closest("button");
@@ -25,13 +26,14 @@ class RecipeApp {
       this.renderRecipes();
     });
 
+    // 2. مسح الفلتر
     document.getElementById("clearFilterButton")?.addEventListener("click", () => {
       this.activeCategory = "all";
       this.renderCategories();
       this.renderRecipes();
     });
-    
-    // ربط نموذج إضافة الوصفة (تأكد من وجود id="recipeForm" في HTML)
+
+    // 3. نموذج إضافة وصفة
     document.getElementById("recipeForm")?.addEventListener("submit", (e) => this.addRecipe(e));
   }
 
@@ -47,7 +49,7 @@ class RecipeApp {
       }
       this.renderRecipes();
     } catch (error) {
-      console.error("Error loading recipes:", error);
+      console.error("Tarifler yüklenirken hata oluştu:", error);
     }
   };
 
@@ -57,9 +59,11 @@ class RecipeApp {
       this.categories = await response.json();
       this.renderCategories();
     } catch (error) {
-      console.error("Error loading categories:", error);
+      console.error("Kategoriler yüklenirken hata:", error);
     }
   };
+
+  // --- العمليات الأساسية ---
 
   addRecipe = (event) => {
     event.preventDefault();
@@ -67,69 +71,26 @@ class RecipeApp {
     const ingredientInput = document.getElementById("ingredient");
     const imageUrlInput = document.getElementById("imageUrl");
 
-    if (!recipeInput.value || !ingredientInput.value || !imageUrlInput.value) {
-      alert("Lütfen tüm alanları doldurun!");
-      return;
-    }
-
     const newRecipe = {
       id: Date.now(),
       recipe: recipeInput.value,
-      image: imageUrlInput.value,
+      image: imageUrlInput.value || "https://via.placeholder.com/300",
       ingredients: ingredientInput.value.split(",").map(i => i.trim()),
       isFavorite: false,
       category: this.activeCategory === "all" ? "other" : this.activeCategory,
-      // قيم افتراضية للعناصر الجديدة
       rating: "5.0",
       ratingCount: 0,
       deliveryTime: "20-30 dk",
       priceLevel: "₺",
-      minOrder: 0
+      minOrder: 40,
+      menu: [] // قائمة طعام فارغة افتراضياً للوصفات الجديدة
     };
 
     this.recipes.push(newRecipe);
     this.saveToStorage();
     this.renderRecipes();
-    
-    // تفريغ الحقول
     event.target.reset(); 
-    alert("Tarif başarıyla eklendi!");
-  };
-
-  renderRecipes = () => {
-    const resultDiv = document.getElementById("tariffs");
-    if (!resultDiv) return;
-
-    const filtered = this.activeCategory === "all"
-      ? this.recipes
-      : this.recipes.filter(r => r.category === this.activeCategory);
-
-    resultDiv.innerHTML = filtered.map(item => `
-      <div onclick="app.openRestaurant(${item.id})" class="food-card">
-        <div class="img-container">
-          <img src="${item.image}" class="card-img" alt="${item.recipe}">
-          <div class="fav-icon" onclick="event.stopPropagation(); app.toggleFavorite(${item.id})">
-            ${item.isFavorite ? "❤️" : "🤍"}
-          </div>
-        </div>
-        <div class="food-info">
-          <h3>${item.recipe}</h3>
-          <div class="rating">
-            ⭐ ${item.rating || "0.0"} <span>(${item.ratingCount || 0})</span>
-          </div>
-          <div class="details">
-            <span>${item.deliveryTime || ""}</span> • 
-            <span>${item.priceLevel || ""}</span> •
-            <span>Min. ${item.minOrder || 0} TL</span>
-          </div>
-          <div class="tags">
-            ${item.isFreeDelivery ? `<span class="free">Ücretsiz</span>` : ""}
-            ${item.discount ? `<span class="discount">%${item.discount}</span>` : ""}
-            ${item.plus ? `<span class="plus">+${item.plus}</span>` : ""}
-          </div>
-        </div>
-      </div>
-    `).join("");
+    alert("Yeni tarif eklendi!");
   };
 
   toggleFavorite = (id) => {
@@ -140,50 +101,106 @@ class RecipeApp {
     this.renderRecipes();
   };
 
-  openRestaurant = (id) => {
-    const restaurant = this.recipes.find(r => r.id === id);
-    if (!restaurant) return;
-
-    document.getElementById("HomePage").style.display = "none";
-    document.getElementById("restaurantPage").style.display = "block";
-
-    document.getElementById("resName").innerText = restaurant.recipe;
-    document.getElementById("resImage").src = restaurant.image;
-
-    const menuDiv = document.getElementById("menu");
-    if (restaurant.menu && restaurant.menu.length > 0) {
-      menuDiv.innerHTML = restaurant.menu.map(item => `
-        <div class="menu-item">
-          <img src="${item.image}" alt="${item.name}">
-          <h4>${item.name}</h4>
-          <p>₺${item.price}</p>
-          <button onclick="app.addToCart(${id}, ${item.id})">+</button>
-        </div>
-      `).join("");
-    } else {
-      menuDiv.innerHTML = "<p>Menü henüz eklenmemiş.</p>";
+  // --- السلة (Cart Logic) ---
+  addToCart = (restaurantId, itemId) => {
+    const restaurant = this.recipes.find(r => r.id === restaurantId);
+    const item = restaurant?.menu.find(m => m.id === itemId);
+    
+    if (item) {
+      this.cart.push(item);
+      alert(`${item.name} sepete eklendi!`);
+      console.log("Sepetiniz:", this.cart);
     }
   };
 
-  goBack = () => {
-    document.getElementById("HomePage").style.display = "block";
-    document.getElementById("restaurantPage").style.display = "none";
+  // --- العرض (Rendering) ---
+
+  renderRecipes = () => {
+    const resultDiv = document.getElementById("tariffs");
+    if (!resultDiv) return;
+
+    const filtered = this.activeCategory === "all"
+      ? this.recipes
+      : this.recipes.filter(r => r.category === this.activeCategory);
+
+    resultDiv.innerHTML = filtered.map(item => `
+      <div class="food-card" onclick="app.openRestaurant(${item.id})">
+        <div class="img-container">
+          <img src="${item.image}" class="card-img" loading="lazy">
+          <div class="fav-icon" onclick="event.stopPropagation(); app.toggleFavorite(${item.id})">
+            ${item.isFavorite ? "❤️" : "🤍"}
+          </div>
+        </div>
+        <div class="food-info">
+          <h3>${item.recipe}</h3>
+          <div class="rating">⭐ ${item.rating} <span>(${item.ratingCount})</span></div>
+          <div class="details">
+            <span>${item.deliveryTime}</span> • <span>Min. ${item.minOrder} TL</span>
+          </div>
+        </div>
+      </div>
+    `).join("");
   };
 
   renderCategories = () => {
     const categoryRow = document.getElementById("categoryRow");
-    if (!categoryRow || this.categories.length === 0) return;
+    if (!categoryRow) return;
 
-    categoryRow.innerHTML = this.categories.map((category) => `
-      <button 
-        class="category-chip ripple ${category.key === this.activeCategory ? "active" : ""}" 
-        type="button" 
-        data-category="${category.key}"
-      >
-        <span class="category-icon">${category.icon}</span>
-        <strong>${category.label}</strong>
+    categoryRow.innerHTML = this.categories.map(cat => `
+      <button class="category-chip ${cat.key === this.activeCategory ? 'active' : ''}" data-category="${cat.key}">
+        <span class="category-icon">${cat.icon}</span>
+        <strong>${cat.label}</strong>
       </button>
     `).join("");
+  };
+
+  // --- التنقل (Navigation) ---
+
+  openRestaurant = (id) => {
+  // تحويل id إلى رقم لضمان المطابقة مع JSON
+  const restaurant = this.recipes.find(r => Number(r.id) === Number(id));
+  
+  if (!restaurant) {
+    console.error("Restaurant not found for ID:", id);
+    return;
+  }
+
+  // إظهار وإخفاء الصفحات
+  document.getElementById("HomePage").style.display = "none";
+  document.getElementById("restaurantPage").style.display = "block";
+
+  // تعبئة البيانات الأساسية
+  document.getElementById("resName").innerText = restaurant.recipe;
+  document.getElementById("resImage").src = restaurant.image;
+
+  const menuDiv = document.getElementById("menu");
+  
+  // التأكد من وجود المنيو وأنه مصفوفة
+  if (restaurant.menu && Array.isArray(restaurant.menu) && restaurant.menu.length > 0) {
+    menuDiv.innerHTML = restaurant.menu.map(item => `
+      <div class="menu-item">
+        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/150'">
+        <div class="menu-text">
+          <h4>${item.name}</h4>
+          <p>₺${item.price}</p>
+        </div>
+        <button onclick="app.addToCart(${restaurant.id}, ${item.id})">+</button>
+      </div>
+    `).join("");
+  } else {
+    menuDiv.innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+        <p>Bu restoranın menüsü henüz eklenmemiş.</p>
+      </div>
+    `;
+  }
+  
+  window.scrollTo(0, 0);
+};
+
+  goBack = () => {
+    document.getElementById("HomePage").style.display = "block";
+    document.getElementById("restaurantPage").style.display = "none";
   };
 
   saveToStorage() {
@@ -191,5 +208,4 @@ class RecipeApp {
   }
 }
 
-// تشغيل التطبيق
 const app = new RecipeApp();
