@@ -13,7 +13,7 @@ if (navigator.geolocation){
                 data.address.town||
                 "bilinmeyen konum";
                 const city_district = 
-                data.address.city_district||
+                data.address.suburb||
                 "bilinmeyen konum";
                 locationText.textContent = `${town}/${city_district}`;
             } catch (err) {

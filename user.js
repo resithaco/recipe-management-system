@@ -1,6 +1,8 @@
 class RecipeApp {
 
   constructor() {
+    this.activeCategory = "all";
+    this.renderCategories();
     this.recipes = [];
     this.loadRecipes();
   }
@@ -156,6 +158,32 @@ goBack() {
   document.getElementById("HomePage").style.display = "block";
   document.getElementById("restaurantPage").style.display = "none";
 }
+
+
+
+
+
+
+renderCategories = async () => {
+
+  const categoryRow = document.getElementById("categoryRow");
+  if (!categoryRow) return;
+
+  const response = await fetch("categories.json");
+  const categories = await response.json();
+
+  categoryRow.innerHTML = categories.map((category) => `
+    <button 
+      class="category-chip ripple ${category.key === this.activeCategory ? "active" : ""}" 
+      type="button" 
+      data-category="${category.key}"
+    >
+      <span class="category-icon">${category.icon}</span>
+      <strong>${category.label}</strong>
+    </button>
+  `).join("");
+
+};
 }
 const app = new RecipeApp();
 
