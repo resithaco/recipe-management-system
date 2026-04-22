@@ -129,6 +129,14 @@
     margin-top: 50px;
     font-style: italic;
 }
+.menu-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu-text h4 { margin: 0; font-size: 1rem; }
+.menu-text p { margin: 5px 0 0; color: #2dce89; font-weight: bold; }
 @media (max-width: 500px) {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);

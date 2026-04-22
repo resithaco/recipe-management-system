@@ -3,7 +3,7 @@ class RecipeApp {
     this.activeCategory = "all";
     this.recipes = [];
     this.categories = [];
-    this.cart = []; // إضافة مصفوفة للسلة
+    this.cart = []; // مصفوفة لتخزين عناصر السلة
 
     this.init();
   }
@@ -15,12 +15,11 @@ class RecipeApp {
   }
 
   setupEventListeners() {
-    // 1. التعامل مع الضغط على التصنيفات
+    // 1. تغيير التصنيفات
     const categoryRow = document.getElementById("categoryRow");
     categoryRow?.addEventListener("click", (e) => {
       const btn = e.target.closest("button");
       if (!btn) return;
-
       this.activeCategory = btn.dataset.category;
       this.renderCategories();
       this.renderRecipes();
@@ -33,10 +32,11 @@ class RecipeApp {
       this.renderRecipes();
     });
 
-    // 3. نموذج إضافة وصفة
+    // 3. إضافة وصفة جديدة عبر النموذج
     document.getElementById("recipeForm")?.addEventListener("submit", (e) => this.addRecipe(e));
   }
 
+  // --- جلب البيانات ---
   loadRecipes = async () => {
     try {
       const localData = localStorage.getItem("recipes");
@@ -49,7 +49,7 @@ class RecipeApp {
       }
       this.renderRecipes();
     } catch (error) {
-      console.error("Tarifler yüklenirken hata oluştu:", error);
+      console.error("Tarifler yüklenirken hata:", error);
     }
   };
 
@@ -63,34 +63,36 @@ class RecipeApp {
     }
   };
 
-  // --- العمليات الأساسية ---
+  // --- إدارة البيانات ---
+  saveToStorage() {
+    localStorage.setItem("recipes", JSON.stringify(this.recipes));
+  }
 
   addRecipe = (event) => {
     event.preventDefault();
-    const recipeInput = document.getElementById("recipe");
-    const ingredientInput = document.getElementById("ingredient");
-    const imageUrlInput = document.getElementById("imageUrl");
+    const name = document.getElementById("recipe").value;
+    const ingredients = document.getElementById("ingredient").value;
+    const img = document.getElementById("imageUrl").value;
 
     const newRecipe = {
       id: Date.now(),
-      recipe: recipeInput.value,
-      image: imageUrlInput.value || "https://via.placeholder.com/300",
-      ingredients: ingredientInput.value.split(",").map(i => i.trim()),
+      recipe: name,
+      image: img || "https://via.placeholder.com/300",
+      ingredients: ingredients.split(",").map(i => i.trim()),
       isFavorite: false,
       category: this.activeCategory === "all" ? "other" : this.activeCategory,
       rating: "5.0",
-      ratingCount: 0,
+      ratingCount: "0",
       deliveryTime: "20-30 dk",
-      priceLevel: "₺",
       minOrder: 40,
-      menu: [] // قائمة طعام فارغة افتراضياً للوصفات الجديدة
+      menu: [] 
     };
 
     this.recipes.push(newRecipe);
     this.saveToStorage();
     this.renderRecipes();
     event.target.reset(); 
-    alert("Yeni tarif eklendi!");
+    alert("Yeni restoran/tarif başarıyla eklendi!");
   };
 
   toggleFavorite = (id) => {
@@ -102,19 +104,18 @@ class RecipeApp {
   };
 
   // --- السلة (Cart Logic) ---
-  addToCart = (restaurantId, itemId) => {
-    const restaurant = this.recipes.find(r => r.id === restaurantId);
-    const item = restaurant?.menu.find(m => m.id === itemId);
+  addToCart = (resId, itemId) => {
+    const restaurant = this.recipes.find(r => Number(r.id) === Number(resId));
+    const item = restaurant?.menu?.find(m => Number(m.id) === Number(itemId));
     
     if (item) {
-      this.cart.push(item);
+      this.cart.push({ ...item, restaurantName: restaurant.recipe });
       alert(`${item.name} sepete eklendi!`);
-      console.log("Sepetiniz:", this.cart);
+      console.log("Güncel Sepet:", this.cart);
     }
   };
 
   // --- العرض (Rendering) ---
-
   renderRecipes = () => {
     const resultDiv = document.getElementById("tariffs");
     if (!resultDiv) return;
@@ -154,58 +155,39 @@ class RecipeApp {
     `).join("");
   };
 
-  // --- التنقل (Navigation) ---
-
+  // --- التنقل ---
   openRestaurant = (id) => {
-  // تحويل id إلى رقم لضمان المطابقة مع JSON
-  const restaurant = this.recipes.find(r => Number(r.id) === Number(id));
-  
-  if (!restaurant) {
-    console.error("Restaurant not found for ID:", id);
-    return;
-  }
+    const restaurant = this.recipes.find(r => Number(r.id) === Number(id));
+    if (!restaurant) return;
 
-  // إظهار وإخفاء الصفحات
-  document.getElementById("HomePage").style.display = "none";
-  document.getElementById("restaurantPage").style.display = "block";
+    document.getElementById("HomePage").style.display = "none";
+    document.getElementById("restaurantPage").style.display = "block";
 
-  // تعبئة البيانات الأساسية
-  document.getElementById("resName").innerText = restaurant.recipe;
-  document.getElementById("resImage").src = restaurant.image;
+    document.getElementById("resName").innerText = restaurant.recipe;
+    document.getElementById("resImage").src = restaurant.image;
 
-  const menuDiv = document.getElementById("menu");
-  
-  // التأكد من وجود المنيو وأنه مصفوفة
-  if (restaurant.menu && Array.isArray(restaurant.menu) && restaurant.menu.length > 0) {
-    menuDiv.innerHTML = restaurant.menu.map(item => `
-      <div class="menu-item">
-        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/150'">
-        <div class="menu-text">
-          <h4>${item.name}</h4>
-          <p>₺${item.price}</p>
+    const menuDiv = document.getElementById("menu");
+    if (restaurant.menu && restaurant.menu.length > 0) {
+      menuDiv.innerHTML = restaurant.menu.map(item => `
+        <div class="menu-item">
+          <img src="${item.image}" onerror="this.src='https://via.placeholder.com/150'">
+          <div class="menu-text">
+            <h4>${item.name}</h4>
+            <p>₺${item.price}</p>
+          </div>
+          <button onclick="app.addToCart(${restaurant.id}, ${item.id})">+</button>
         </div>
-        <button onclick="app.addToCart(${restaurant.id}, ${item.id})">+</button>
-      </div>
-    `).join("");
-  } else {
-    menuDiv.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
-        <p>Bu restoranın menüsü henüz eklenmemiş.</p>
-      </div>
-    `;
-  }
-  
-  window.scrollTo(0, 0);
-};
+      `).join("");
+    } else {
+      menuDiv.innerHTML = "<p style='grid-column:1/-1; text-align:center;'>Menü henüz eklenmemiş.</p>";
+    }
+    window.scrollTo(0, 0);
+  };
 
   goBack = () => {
     document.getElementById("HomePage").style.display = "block";
     document.getElementById("restaurantPage").style.display = "none";
   };
-
-  saveToStorage() {
-    localStorage.setItem("recipes", JSON.stringify(this.recipes));
-  }
 }
 
 const app = new RecipeApp();
