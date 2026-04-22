@@ -364,59 +364,49 @@ h2 {
 
 
 
-/* حاوية القسم بالكامل */
 .section {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .section-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-
 .section-heading h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333;
 }
-
-/* زر مسح الفلتر */
 .ghost-button {
     background: transparent;
     border: none;
-    color: #ff385c; /* لون مميز */
+    color: #ff385c;
     font-weight: 600;
     cursor: pointer;
     padding: 8px 12px;
     border-radius: 8px;
     transition: background 0.3s;
 }
-
 .ghost-button:hover {
     background: rgba(255, 56, 92, 0.1);
 }
-
-/* صف التصنيفات - يدعم التمرير الأفقي */
 .category-row {
     display: flex;
     gap: 12px;
-    overflow-x: auto; /* يسمح بالتمرير الأفقي */
+    overflow-x: auto;
     padding: 10px 5px;
-    scrollbar-width: none; /* إخفاء شريط التمرير في فايرفوكس */
+    scrollbar-width: none;
 }
 
 .category-row::-webkit-scrollbar {
-    display: none; /* إخفاء شريط التمرير في كروم وسفاري */
+    display: none; 
 }
-
-/* تصميم بطاقة التصنيف (الزر) */
 .category-chip {
     display: flex;
-    flex-direction: column; /* الأيقونة فوق النص */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-width: 80px;
@@ -428,38 +418,30 @@ h2 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-
 .category-chip:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-color: #ff385c;
 }
 
-/* الحالة النشطة (عند الاختيار) */
 .category-chip.active {
     background: #ff385c;
     border-color: #ff385c;
     color: #fff;
 }
-
 .category-chip.active .category-icon {
     transform: scale(1.1);
 }
-
-/* الأيقونة والنص داخل الزر */
 .category-icon {
     font-size: 24px;
     margin-bottom: 8px;
     display: block;
 }
-
 .category-chip strong {
     font-size: 0.85rem;
     font-weight: 600;
     white-space: nowrap;
 }
-
-/* تأثير الـ Ripple البسيط */
 .ripple {
     position: relative;
     overflow: hidden;
