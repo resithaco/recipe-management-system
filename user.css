@@ -15,6 +15,7 @@
     --header-height: 136px;
     --bottom-nav-height: 82px;
     --transition: 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    --shadoo:6px 6px 12px #bec3c9 ,-6px -6px 12px #ffffff;
 }
 * {
     -webkit-tap-highlight-color: transparent;
