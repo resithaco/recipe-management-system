@@ -85,8 +85,6 @@
         <span>Profil</span>
     </button>
 </nav>
-<div id="homePage"></div>
-
 <div class="restaurant-page" id="restaurantPage" style="display:none;">
     <div class="top-bar">
         <button onclick="app.goBack()">⬅</button>
@@ -96,6 +94,71 @@
         <img id="resImage">
     </div>
     <div class="menu-grid" id="menu"></div>
+</div>
+<div id="cartPage" class="cart-page" style="display:none;">
+    <div class="top-bar">
+        <button onclick="app.closeCart()">⬅</button>
+        <h2>Sepetim</h2>
+    </div>
+    <div id="cartItems" class="cart-items">
+        </div>
+    <div class="cart-footer">
+        <div class="total-info">
+            <span>Toplam:</span>
+            <strong id="totalPrice">0 TL</strong>
+        </div>
+        <button class="checkout-btn" onclick="app.checkout()">Siparişi Tamamla</button>
+    </div>
+</div>
+<div id="cartFloatingButton" class="cart-fab" onclick="app.openCart()">
+    <span class="cart-count" id="cartCount">0</span>
+    🛒
+</div>
+<div id="profilePage" class="profile-page" style="display:none;">
+    <div class="top-bar">
+        <button onclick="app.closeProfile()">⬅</button>
+        <h2>Profilim</h2>
+    </div>
+    
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="avatar-circle">R</div>
+            <h3 id="displayUserName">Kullanıcı Adı</h3>
+            <p id="displayUserEmail">email@example.com</p>
+        </div>
+
+        <form id="profileForm" class="profile-form">
+            <div class="form-group">
+                <label>Ad Soyad</label>
+                <input type="text" id="profileName" placeholder="Adınızı girin">
+            </div>
+            <div class="form-group">
+                <label>E-posta</label>
+                <input type="email" id="profileEmail" placeholder="E-postanızı girin">
+            </div>
+            <div class="form-group">
+                <label>Yeni Şifre</label>
+                <input type="password" id="profilePass" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" id="profilePhone" placeholder="05xx xxx xx xx">
+            </div>
+            
+            <button type="submit" class="save-profile-btn">Bilgileri Güncelle</button>
+        </form>
+        <div class="account-stats">
+            <div class="stat-card">
+                <strong id="statOrderCount">0</strong>
+                <span>Sipariş</span>
+            </div>
+            <div class="stat-card">
+                <strong>0 TL</strong>
+                <span>Cüzdan</span>
+            </div>
+        </div>
+    </div>
+    <button onclick="app.logOut()" class="logout-btn">Oturumu Kapat</button>
 </div>
 <script src="user.js"></script>
 <script src="location.js"></script>
